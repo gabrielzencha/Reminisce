@@ -13,7 +13,7 @@ import LoginScreen from './Components/Screens/Login';
 import SignUpScreen from './Components/Screens/Signup';
 import AboutMe from './Components/AppComponents/AboutMe';
 import UserGuide from './Components/AppComponents/UserGuide';
-import MessageScreen from './Components/AppComponents/MessageScreen';
+import MessageScreen from './Components/AppComponents/MessageScreen.js';
 import ChatScreen from './Components/Screens/ChatScreen';
 import Memories from './Components/AppComponents/Memories';
 import EditProfileScreen from './Components/AppComponents/EditProfileScreen';
