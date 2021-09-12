@@ -1,6 +1,6 @@
 import { AntDesign } from '@expo/vector-icons';
 import React from 'react';
-import { View, Text, Button, TextInput } from 'react-native';
+import { View, Text, Button, TextInput, StyleSheet } from 'react-native';
 import { windowHeight, windowWidth } from '../../assets/utils/Dimensions';
 
 const FormInput = ({labelValue, placeholderText, iconType, ...rest}) => {
@@ -20,6 +20,8 @@ const FormInput = ({labelValue, placeholderText, iconType, ...rest}) => {
         </View>
     );
 }
+
+export default FormInput
 const styles = StyleSheet.create({
     inputContainer: {
      marginTop: 5,
@@ -31,7 +33,7 @@ const styles = StyleSheet.create({
      borderWidth: 1,
      flexDirection: 'row',
      alignItems: 'center',
-     backgroudColor: '#fff'
+     backgroundColor: '#fff'
     },
 
     iconStyle: {

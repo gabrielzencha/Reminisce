@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity,StyleSheet } from 'react-native'
 import { windowHeight } from '../../assets/utils/Dimensions'
 
 export default function FormButton({buttonTitle, ...rest}) {
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     buttonText: {
         fontSize: 18,
         fontWeight: 'bold',
-        color: '#fffff',
+        color: '#ffffff',
         
     }
 })
