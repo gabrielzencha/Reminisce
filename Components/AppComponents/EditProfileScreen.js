@@ -7,7 +7,21 @@ import BottomSheet from "reanimated-bottom-sheet";
 export default function EditProfileScreen() {
 
     const renderInner = () => (
-        <Text>Hello</Text>
+        <View style={styles.panel}>
+            <View style={{alignItems: 'center'}}>
+                <Text style={styles.panelTitle} >Upload Photo</Text>
+                <Text style={styles.panelSubtitle}>Chose your Profile Picture</Text>
+            </View>
+            <TouchableOpacity style={styles.panelButton}>
+                <Text style={styles.panelButtonTitle}>Take Photo</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.panelButton}>
+                <Text style={styles.panelButtonTitle}>Choose From Library</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.panelButton}  onPress={()=>bs.current.snapTo(1)} >
+                <Text style={styles.panelButtonTitle}>Cancel</Text>
+            </TouchableOpacity>
+        </View>
     );
     const renderHeader = () => (
         <View style={styles.header}>
@@ -30,7 +44,9 @@ export default function EditProfileScreen() {
                 renderHeader= {renderHeader}
             
             />
-            <View style={{margin: 20}}>
+            <Animated.View style={{margin: 20,
+                opacity: Animated.add(0.0, Animated.multiply(fall, 1.0))
+                }}>
                 <View style={{alignItems: 'center'}}>
                     <TouchableOpacity onPress={()=>bs.current.snapTo(0)}>
                         <View style={{
@@ -216,10 +232,11 @@ export default function EditProfileScreen() {
                     </View>
                      <TextInput style={styles.textInput} placeholder="type your response here"/>
                 </View>
-            </View>
-            <TouchableOpacity onPress= {() => {}} style={styles.commandButton}>
+                <TouchableOpacity onPress= {() => {}} style={styles.commandButton}>
                     <Text style={styles.panelButtonTitle}>Submit</Text>
             </TouchableOpacity>
+            </Animated.View>
+            
         </ScrollView>
     )
 }
@@ -260,7 +277,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#000040",
         marginBottom: 10,
     },
-    pandelTitle: {
+    panelTitle: {
         fontSize: 27,
         height: 35,
     },
@@ -273,7 +290,7 @@ const styles = StyleSheet.create({
     panelButton: {
         padding: 13,
         borderRadius: 10,
-        backgroundColor: '#fff',
+        backgroundColor: '#ff5b5b',
         alignItems: 'center',
         marginVertical: 7,
     },
