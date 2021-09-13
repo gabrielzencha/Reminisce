@@ -2,13 +2,37 @@ import React from 'react'
 import { View, Text, TouchableOpacity, ImageBackground, TextInput, StyleSheet, Platform } from 'react-native';
 import { FontAwesome, MaterialCommunityIcons, Feather } from '@expo/vector-icons';
 import { ScrollView } from 'react-native-gesture-handler';
-
+import Animated from 'react-native-reanimated';
+import BottomSheet from "reanimated-bottom-sheet";
 export default function EditProfileScreen() {
+
+    const renderInner = () => (
+        <Text>Hello</Text>
+    );
+    const renderHeader = () => (
+        <View style={styles.header}>
+            <View style={styles.panelHeader} >
+                <View style={styles.panelHandle}></View>
+            </View>
+        </View>
+    );
+    bs = React.createRef();
+    fall = new Animated.Value(1);
     return (
         <ScrollView style={styles.container}>
+            <BottomSheet
+                ref={bs}
+                snapPoints= {[730, 0]}
+                initialSnap={1}
+                callbackNode={fall}
+                enabledGestureInteraction = {true}
+                renderContent={renderInner}
+                renderHeader= {renderHeader}
+            
+            />
             <View style={{margin: 20}}>
                 <View style={{alignItems: 'center'}}>
-                    <TouchableOpacity onPress={()=>{}}>
+                    <TouchableOpacity onPress={()=>bs.current.snapTo(0)}>
                         <View style={{
                             height: 100,
                             width: 100,
@@ -229,7 +253,7 @@ const styles = StyleSheet.create({
     panelHeader: {
         alignItems: 'center'
     },
-    pandelHandle: {
+    panelHandle: {
         width: 40, 
         height: 8, 
         borderRadius: 4,
