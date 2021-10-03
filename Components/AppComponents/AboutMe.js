@@ -55,7 +55,7 @@ const ProfileScreen = ({ navigation }) => {
           <FontAwesome name="envelope" color="#777777" size={20} />
           <Text style={{ color: "#777777", marginLeft: 20 }}>
             {" "}
-            reminisce@hotmail.com
+            reminisce2021@hotmail.com
             </Text>
         </View>
         
@@ -68,23 +68,23 @@ const ProfileScreen = ({ navigation }) => {
           alignItems: 'center', 
           justifyContent: 'center'
         }}>
-          <Title>12</Title>
-          <Caption>Walks</Caption>
+          <Title>StoryOfMyLife</Title>
+          <Caption>I was born in Manchester and grew up in a family of 4. At 17, I left school and worked as a typing assistant where I met Anthony. We married 3years after and moved to London where we had three sons. He worked in the navy and I became a housewife to look after the children and also did sewing. We had a happy life but sadly in 2016, Anthony died. </Caption>
           </View>
           <View style={[styles.infoBox], {
             flex: 1, 
             alignItems: 'center', 
             justifyContent: 'center'
           }}>
-          <Title>75</Title>
-          <Caption>Age</Caption>
+          <Title>MyLikesAndDislikes</Title>
+          <Caption>I love being in the company of others and talking about my past experiences. I also enjoy walking and celebrated my 50th birthday walking in the Lake District. I hate being ordered around. </Caption>
           </View>
       </View>
       <View style={styles.menuWrapper}>
           <TouchableRipple onPress={()=> {}}>
             <View style={styles.menuItem}>
               <FontAwesome name="heart-o" color="#ff6347" size={25}/>
-              <Text style={styles.menuItemText}>You Favourites</Text>
+              <Text style={styles.menuItemText}>Your Favourites</Text>
             </View>
           </TouchableRipple>
           <TouchableRipple onPress={()=> {}}>

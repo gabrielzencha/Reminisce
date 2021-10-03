@@ -121,7 +121,7 @@ export default function EditProfileScreen() {
                 <View style={styles.action}>
                     <FontAwesome name="address-book" size={20}/>
                     <TextInput
-                    placeholder="First Emergency Contact Name"
+                    placeholder="Emergency Contact Name"
                     placeholderTextColor = "#666666"
                     style ={styles.textInput}
                     autoCorrect ={false}
@@ -139,7 +139,7 @@ export default function EditProfileScreen() {
                 <View style={styles.action}>
                     <FontAwesome name="envelope" size={20}/>
                     <TextInput
-                    placeholder="First Emergency Contact Email"
+                    placeholder="Emergency Contact Email"
                     placeholderTextColor = "#666666"
                     style ={styles.textInput}
                     autoCorrect ={false}
@@ -148,7 +148,7 @@ export default function EditProfileScreen() {
                 <View style={styles.action}>
                     <FontAwesome name="phone" size={20}/>
                     <TextInput
-                    placeholder="First Emergency Contact Telephone"
+                    placeholder="Emergency Contact Telephone"
                     placeholderTextColor = "#666666"
                     style ={styles.textInput}
                     autoCorrect ={false}
@@ -157,7 +157,7 @@ export default function EditProfileScreen() {
                 <View style={styles.action}>
                     <FontAwesome name="address-book" size={20}/>
                     <TextInput
-                    placeholder="Second Emergency Contact Name"
+                    placeholder="Emergency Contact Name"
                     placeholderTextColor = "#666666"
                     style ={styles.textInput}
                     autoCorrect ={false}
@@ -175,7 +175,7 @@ export default function EditProfileScreen() {
                 <View style={styles.action}>
                     <FontAwesome name="envelope" size={20}/>
                     <TextInput
-                    placeholder="Second Emergency Contact Email"
+                    placeholder="Emergency Contact Email"
                     placeholderTextColor = "#666666"
                     style ={styles.textInput}
                     autoCorrect ={false}
@@ -184,7 +184,7 @@ export default function EditProfileScreen() {
                 <View style={styles.action}>
                     <FontAwesome name="phone" size={20}/>
                     <TextInput
-                    placeholder="Second Emergency Contact Telephone"
+                    placeholder="Emergency Contact Telephone"
                     placeholderTextColor = "#666666"
                     style ={styles.textInput}
                     autoCorrect ={false}
@@ -211,7 +211,7 @@ export default function EditProfileScreen() {
                         flexDirection: 'row'
                     }}>
                     <FontAwesome name="question" size={20}/>
-                    <Text style={ {color: "#00000f", fontSize: 20, paddingLeft: 10}}>Which of your emegerncy contacts will use Reminsce on your behalf?
+                    <Text style={ {color: "#00000f", fontSize: 20, paddingLeft: 10}}>Which of your emergency contacts will be using Reminisce on your behalf?
                      </Text>
                     </View>
                      <TextInput style={styles.textInput} placeholder="type your response here"/>
