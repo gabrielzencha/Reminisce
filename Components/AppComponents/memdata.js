@@ -79,7 +79,7 @@ export default [
     },
     {
         id: '14',
-        questions: 'What memories come to mind when you see a hat?\nWhat special person did you meet at a social event?\n',
+        questions: 'What memories come to mind when you see a hat?\nWhich special person did you meet at a social event?\n',
         title:'Hats',
         image: require('../../assets/images/logo.png')
     },
