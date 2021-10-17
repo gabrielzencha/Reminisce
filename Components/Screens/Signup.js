@@ -7,24 +7,37 @@ import {
   StyleSheet,
   
 } from 'react-native';
+import { LogBox } from 'react-native';
+LogBox.ignoreAllLogs();
 import RNRestart from 'react-native-restart';
 import FormInput from '../FormComponents/FormInput'
 import FormButton from '../FormComponents/FormButton';
 import SocialButton from '../FormComponents/SocialButton';
-
+import { auth } from '../../firebase';
 const SignupScreen = ({navigation}) => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
-    const [confirmPassword, setConfirmPassword] = useState();
+    const [name, setName] = useState();
+    const [imageURL, setImageURL] = useState();
   
-    const onSingUp = () => {
-        firebase.auth().createUserWithEmailAndPassword(email, password)
+    const onSignUp = () => {
+        auth.createUserWithEmailAndPassword(email, password)
         .then((result) => {
+          var user = result.user;
+          user.updateProfile({
+            displayName: name,
+            photoURL: imageURL ? imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1024px-User-avatar.svg.png",
+
+          }).then(function() {
+            
+          }).catch(function(error) {
+            console.log(error)
+          })
             RNRestart.Restart();
 
         })
         .catch((error)=>{
-            console.log(error)
+            alert(error);
         })
     }
   
@@ -41,6 +54,14 @@ const SignupScreen = ({navigation}) => {
           autoCapitalize="none"
           autoCorrect={false}
         />
+        <FormInput
+          labelValue={name}
+          onChangeText={(userName) => setName(userName)}
+          placeholderText="Name"
+          iconType="user"
+          autoCapitalize="none"
+          autoCorrect={false}
+        />
   
         <FormInput
           labelValue={password}
@@ -49,18 +70,19 @@ const SignupScreen = ({navigation}) => {
           iconType="lock"
           secureTextEntry={true}
         />
-  
         <FormInput
-          labelValue={confirmPassword}
-          onChangeText={(userPassword) => setConfirmPassword(userPassword)}
-          placeholderText="Confirm Password"
-          iconType="lock"
-          secureTextEntry={true}
+          labelValue={imageURL}
+          onChangeText={(text) => setImageURL(text)}
+          placeholderText="Enter your image Url "
+          iconType="user"
+          autoCapitalize="none"
+          autoCorrect={false}
         />
+  
   
         <FormButton
           buttonTitle="Sign Up"
-          onPress={onSingUp()}
+          onPress={()=>onSignUp()}
         />
   
         <View style={styles.textPrivate}>
@@ -79,24 +101,9 @@ const SignupScreen = ({navigation}) => {
         </View>
   
        
-          <View>
-            <SocialButton
-              buttonTitle="Sign Up with Facebook"
-              btnType="facebook"
-              color="#4867aa"
-              backgroundColor="#e6eaf4"
-              onPress={() => {}}
-            />
+           
       
-            <SocialButton
-              buttonTitle="Sign Up with Google"
-              btnType="google"
-              color="#de4d41"
-              backgroundColor="#f5e7ea"
-              onPress={() => {}}
-            />
-          </View>
-        
+      
   
         <TouchableOpacity
           style={styles.navButton}

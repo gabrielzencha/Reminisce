@@ -17,22 +17,9 @@ import MessageScreen from './Components/AppComponents/MessageScreen.js';
 import ChatScreen from './Components/Screens/ChatScreen';
 import Memories from './Components/AppComponents/Memories';
 import EditProfileScreen from './Components/AppComponents/EditProfileScreen';
-import * as firebase from 'firebase'
+import { auth } from './firebase';
 
 
-const  firebaseConfig = {
-  apiKey: "AIzaSyB_Uy-AxO10Kv2kwbUot5KmCNYHGotLIeE",
-  authDomain: "reminisce-7b4e3.firebaseapp.com",
-  projectId: "reminisce-7b4e3",
-  storageBucket: "reminisce-7b4e3.appspot.com",
-  messagingSenderId: "256052502175",
-  appId: "1:256052502175:web:e09315ae4f8cc5600d4caa",
-  measurementId: "G-76547HJD47"
-};
-
-if(firebase.apps.length===0){
-    firebase.initializeApp(firebaseConfig)
-}
 
 const Stack = createStackNavigator();
 
@@ -47,7 +34,7 @@ export default class App extends Component {
     }
   }
   componentDidMount(){
-    firebase.auth().onAuthStateChanged((user) => {
+    auth.onAuthStateChanged((user) => {
       if(!user){
         this.setState({
           loggedIn: false,
@@ -271,5 +258,4 @@ const style = StyleSheet.create({
 })
   
  
-
 
