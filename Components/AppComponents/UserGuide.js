@@ -17,13 +17,13 @@ export default class UserGuide extends Component {
         </Text>
 
         <Text style={styles.textBody}>
-          1) Tab the pencil in the About Me page and give some information about
+          1) Tab the pencil in the "About Me" page and give some information about
           yourself and tab submit.
         </Text>
 
         <Text style={styles.textBody}>
-          2) To send a new text, go to Messages, tab the pencil icon, type and send
-          the text.
+          2) To send a text, go to "Messages", type your message and click send.
+
         </Text>
 
         <Text style={styles.textBody}>
