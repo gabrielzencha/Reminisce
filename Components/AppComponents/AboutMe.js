@@ -14,6 +14,7 @@ import { FontAwesome } from "@expo/vector-icons";
 const ProfileScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
+      <ScrollView >
       <View style={styles.userInfoSection}>
         <View style={{ flexDirection: "row", marginTop: 15 }}>
           <Avatar.Image
@@ -60,26 +61,6 @@ const ProfileScreen = ({ navigation }) => {
         </View>
         
       </View>
-      <View style={styles.infoBoxWrapper}>
-        <View style={[styles.infoBox], {
-          borderRightColor: '#dddddd',
-          borderRightWidth: 1, 
-          flex: 1,
-          alignItems: 'center', 
-          justifyContent: 'center'
-        }}>
-          <Title>StoryOfMyLife</Title>
-          <Caption>I was born in Manchester and grew up in a family of 4. At 17, I left school and worked as a typing assistant where I met Anthony. We married 3years after and moved to London where we had three sons. He worked in the navy and I became a housewife to look after the children and also did sewing. We had a happy life but sadly in 2016, Anthony died. </Caption>
-          </View>
-          <View style={[styles.infoBox], {
-            flex: 1, 
-            alignItems: 'center', 
-            justifyContent: 'center'
-          }}>
-          <Title>MyLikesAndDislikes</Title>
-          <Caption>I love being in the company of others and talking about my past experiences. I also enjoy walking and celebrated my 50th birthday walking in the Lake District. I hate being ordered around. </Caption>
-          </View>
-      </View>
       <View style={styles.menuWrapper}>
           <TouchableRipple onPress={()=> {}}>
             <View style={styles.menuItem}>
@@ -106,6 +87,7 @@ const ProfileScreen = ({ navigation }) => {
             </View>
           </TouchableRipple>
       </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };

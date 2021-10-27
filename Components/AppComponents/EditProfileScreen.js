@@ -75,6 +75,7 @@ export default function EditProfileScreen() {
                 <View style={styles.action}>
                     <FontAwesome name='user-o' size={20}/>
                     <TextInput
+                    multiline = {true}
                     placeholder="First Name and Last Name"
                     placeholderTextColor = "#666666"
                     style ={styles.textInput}
@@ -85,6 +86,7 @@ export default function EditProfileScreen() {
                 <View style={styles.action}>
                     <FontAwesome name='phone' size={20}/>
                     <TextInput
+                    multiline = {true}
                     placeholder="Telephone Number"
                     placeholderTextColor = "#666666"
                     style ={styles.textInput}
@@ -94,6 +96,7 @@ export default function EditProfileScreen() {
                 <View style={styles.action}>
                     <FontAwesome name="thumbs-up" size={20}/>
                     <TextInput
+                    multiline = {true}
                     placeholder="My Likes"
                     placeholderTextColor = "#666666"
                     style ={styles.textInput}
@@ -103,6 +106,7 @@ export default function EditProfileScreen() {
                 <View style={styles.action}>
                     <FontAwesome name='thumbs-down' size={20}/>
                     <TextInput
+                    multiline = {true}
                     placeholder="My Dislikes"
                     placeholderTextColor = "#666666"
                     style ={styles.textInput}
@@ -112,6 +116,7 @@ export default function EditProfileScreen() {
                 <View style={styles.action}>
                     <FontAwesome name="history" size={20}/>
                     <TextInput
+                    multiline = {true}
                     placeholder="Story of my life"
                     placeholderTextColor = "#666666"
                     style ={styles.textInput}
@@ -121,6 +126,7 @@ export default function EditProfileScreen() {
                 <View style={styles.action}>
                     <FontAwesome name="address-book" size={20}/>
                     <TextInput
+                    multiline = {true}
                     placeholder="Emergency Contact Name"
                     placeholderTextColor = "#666666"
                     style ={styles.textInput}
@@ -130,6 +136,7 @@ export default function EditProfileScreen() {
                 <View style={styles.action}>
                     <FontAwesome name='link' size={20}/>
                     <TextInput
+                    multiline = {true}
                     placeholder="Relationship"
                     placeholderTextColor = "#666666"
                     style ={styles.textInput}
@@ -139,6 +146,7 @@ export default function EditProfileScreen() {
                 <View style={styles.action}>
                     <FontAwesome name="envelope" size={20}/>
                     <TextInput
+                    multiline = {true}
                     placeholder="Emergency Contact Email"
                     placeholderTextColor = "#666666"
                     style ={styles.textInput}
@@ -148,6 +156,7 @@ export default function EditProfileScreen() {
                 <View style={styles.action}>
                     <FontAwesome name="phone" size={20}/>
                     <TextInput
+                    multiline = {true}
                     placeholder="Emergency Contact Telephone"
                     placeholderTextColor = "#666666"
                     style ={styles.textInput}
@@ -157,6 +166,7 @@ export default function EditProfileScreen() {
                 <View style={styles.action}>
                     <FontAwesome name="address-book" size={20}/>
                     <TextInput
+                    multiline = {true}
                     placeholder="Emergency Contact Name"
                     placeholderTextColor = "#666666"
                     style ={styles.textInput}
@@ -166,6 +176,7 @@ export default function EditProfileScreen() {
                 <View style={styles.action}>
                     <FontAwesome name='link' size={20}/>
                     <TextInput
+                    multiline = {true}
                     placeholder="Relationship"
                     placeholderTextColor = "#666666"
                     style ={styles.textInput}
@@ -175,6 +186,7 @@ export default function EditProfileScreen() {
                 <View style={styles.action}>
                     <FontAwesome name="envelope" size={20}/>
                     <TextInput
+                    multiline = {true}
                     placeholder="Emergency Contact Email"
                     placeholderTextColor = "#666666"
                     style ={styles.textInput}
@@ -184,6 +196,7 @@ export default function EditProfileScreen() {
                 <View style={styles.action}>
                     <FontAwesome name="phone" size={20}/>
                     <TextInput
+                    multiline = {true}
                     placeholder="Emergency Contact Telephone"
                     placeholderTextColor = "#666666"
                     style ={styles.textInput}
@@ -193,6 +206,7 @@ export default function EditProfileScreen() {
                 <View style={styles.action}>
                     <FontAwesome name="question" size={20}/>
                     <TextInput
+                    multiline = {true}
                     placeholder="Will you be using Reminisce yourself?"
                     placeholderTextColor = "#666666"
                     style ={[styles.textInput], {
@@ -204,18 +218,7 @@ export default function EditProfileScreen() {
                     />
                 </View>
 
-                <View style={[styles.action], {
-                    flexDirection: 'column'
-                }}>
-                    <View style={{
-                        flexDirection: 'row'
-                    }}>
-                    <FontAwesome name="question" size={20}/>
-                    <Text style={ {color: "#00000f", fontSize: 20, paddingLeft: 10}}>Which of your emergency contacts will be using Reminisce on your behalf?
-                     </Text>
-                    </View>
-                     <TextInput style={styles.textInput} placeholder="type your response here"/>
-                </View>
+                
             </View>
             <TouchableOpacity onPress= {() => {}} style={styles.commandButton}>
                     <Text style={styles.panelButtonTitle}>Submit</Text>

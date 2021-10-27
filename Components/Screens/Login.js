@@ -36,7 +36,9 @@ export default function LoginScreen({navigation}) {
       <Text style={styles.text}>Reminisce Social App</Text>
 
       <FormInput
+        
         labelValue={email}
+        multiline={true}
         onChangeText={(userEmail) => setEmail(userEmail)}
         placeholderText="Email"
         iconType="user"
@@ -47,9 +49,11 @@ export default function LoginScreen({navigation}) {
 
       <FormInput
         labelValue={password}
+        multiline={true}
         onChangeText={(userPassword) => setPassword(userPassword)}
         placeholderText="Password"
         iconType="lock"
+        multiline={true}
         secureTextEntry={true}
       />
 

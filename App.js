@@ -98,6 +98,13 @@ export default class App extends Component {
       return (
         <NavigationContainer>
         <Tab.Navigator
+        tabBarOptions={{
+          labelStyle: {
+            fontSize: 13,
+            fontWeight:'700',
+            color: '#000'
+          },
+        }}
        screenOptions = {{tabBarStyle:{
         showLabel:false,
             style: {
@@ -105,11 +112,14 @@ export default class App extends Component {
              bottom: 25,
              left: 20,
              eleavation: 0,
+            
+             fontWeight:'700',
              backgroundColor: '#fff',
             borderRaduis: 15,
             height: 100,
             ...style.shadow
        }}}
+       
           }
         >
           <Tab.Screen name="About Me" component={ProfileStackScreen} 
@@ -122,7 +132,7 @@ export default class App extends Component {
                   style={{
                     width: 25,
                     height: 50,
-                    tintColor: focused ? '#e32f45' : '#748c94'
+                    tintColor: focused ? '#000' : '#000'
                   }}
                 />
               </View>
@@ -140,7 +150,7 @@ export default class App extends Component {
                     style={{
                       width: 25,
                       height: 50,
-                      tintColor: focused ? '#e32f45' : '#748c94'
+                      tintColor: focused ? '#000' : '#000'
                     }}
                   />
                 </View>
@@ -158,7 +168,7 @@ export default class App extends Component {
                     style={{
                       width: 25,
                       height: 25,
-                      tintColor: focused ? '#e32f45' : '#748c94'
+                      tintColor: focused ? '#000' : '#000'
                     }}
                   />
                 </View>
@@ -175,7 +185,7 @@ export default class App extends Component {
                     style={{
                       width: 25,
                       height: 50,
-                      tintColor: focused ? '#e32f45' : '#748c94'
+                      tintColor: focused ? '#000' : '#000'
                     }}
                   />
                 </View>

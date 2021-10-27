@@ -42,12 +42,6 @@ export default [
         image: require('../../assets/images/memories/coffee_maker.jpg')
     },
     {
-        id: '8',
-        questions: '',
-        title:'Cook Book',
-        image: require('../../assets/images/memories/cook_book.jpg')
-    },
-    {
         id: '9',
         questions: 'How did you shop for corsets?\nHow often did you wear corsets?\n',
         title:'Corset',

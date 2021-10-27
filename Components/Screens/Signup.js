@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   Image,
   StyleSheet,
+  ScrollView
   
 } from 'react-native';
 import { LogBox } from 'react-native';
@@ -17,9 +18,7 @@ import { auth } from '../../firebase';
 const SignupScreen = ({navigation}) => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
-    const [name, setName] = useState();
-    const [imageURL, setImageURL] = useState();
-  
+    const [name, setName] = useState();  
     const onSignUp = () => {
         auth.createUserWithEmailAndPassword(email, password)
         .then((result) => {
@@ -42,6 +41,7 @@ const SignupScreen = ({navigation}) => {
     }
   
     return (
+      <ScrollView>
       <View style={styles.container}>
         <Text style={styles.text}>Create an account</Text>
   
@@ -50,6 +50,7 @@ const SignupScreen = ({navigation}) => {
           onChangeText={(userEmail) => setEmail(userEmail)}
           placeholderText="Email"
           iconType="user"
+          multiline={true}
           keyboardType="email-address"
           autoCapitalize="none"
           autoCorrect={false}
@@ -58,6 +59,7 @@ const SignupScreen = ({navigation}) => {
           labelValue={name}
           onChangeText={(userName) => setName(userName)}
           placeholderText="Name"
+          multiline={true}
           iconType="user"
           autoCapitalize="none"
           autoCorrect={false}
@@ -65,19 +67,13 @@ const SignupScreen = ({navigation}) => {
   
         <FormInput
           labelValue={password}
+          multiline={true}
           onChangeText={(userPassword) => setPassword(userPassword)}
           placeholderText="Password"
           iconType="lock"
           secureTextEntry={true}
         />
-        <FormInput
-          labelValue={imageURL}
-          onChangeText={(text) => setImageURL(text)}
-          placeholderText="Enter your image Url "
-          iconType="user"
-          autoCapitalize="none"
-          autoCorrect={false}
-        />
+       
   
   
         <FormButton
@@ -111,6 +107,7 @@ const SignupScreen = ({navigation}) => {
           <Text style={styles.navButtonText}>Have an account? Sign In</Text>
         </TouchableOpacity>
       </View>
+      </ScrollView>
     );
   };
   
