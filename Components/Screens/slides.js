@@ -14,7 +14,7 @@ export default [
     {
         id: '3',
         description: 'Generates positive feelings from sharing past experiences and improves mental health',
-        title: 'Frequent calls, face to face chats and reminiscing',
+        title: 'Frequent calls, face to face chats and reminiscing.',
         image: require('../../assets/images/face_to_face.jpg')
     },
     {
