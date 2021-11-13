@@ -1,5 +1,5 @@
 
-import { StatusBar } from 'expo-status-bar';
+
 import React, {useState, Component} from 'react';
 import { ActivityIndicator, View , Text, StyleSheet, Image} from 'react-native';
 
@@ -20,7 +20,6 @@ import EditProfileScreen from './Components/AppComponents/EditProfileScreen';
 import { auth } from './firebase';
 
 
-
 const Stack = createStackNavigator();
 
 const Tab = createBottomTabNavigator();
@@ -34,6 +33,7 @@ export default class App extends Component {
     }
   }
   componentDidMount(){
+    
     auth.onAuthStateChanged((user) => {
       if(!user){
         this.setState({
@@ -111,10 +111,11 @@ export default class App extends Component {
              position: 'absolute',
              bottom: 25,
              left: 20,
+             fontSize: 13,
              eleavation: 0,
             
              fontWeight:'700',
-             backgroundColor: '#fff',
+             backgroundColor: '#ff5b5b',
             borderRaduis: 15,
             height: 100,
             ...style.shadow
@@ -132,7 +133,7 @@ export default class App extends Component {
                   style={{
                     width: 25,
                     height: 50,
-                    tintColor: focused ? '#000' : '#000'
+                    tintColor: focused ? '#000' : '"#ff5b5b"'
                   }}
                 />
               </View>
@@ -245,7 +246,16 @@ const ProfileStackScreen = ({navigation}) => (
 <ProfileStack.Screen
 name="EditProfile"
 options = {{
-  title: 'Edit Profile'
+  title: 'Edit Profile',
+  headerLeft: () =>(
+    <FontAwesome.Button
+      name='long-arrow-left'
+      size={25}
+      backgroundColor="#fff"
+      color= "#000"
+      onPress={()=> navigation.navigate('profile')}
+    />
+  ),
 
 }}
 component={EditProfileScreen}

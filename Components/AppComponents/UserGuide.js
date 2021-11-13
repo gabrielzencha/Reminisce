@@ -1,15 +1,17 @@
 import React, { Component } from "react";
 import { Text, View, StyleSheet } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 
 export default class UserGuide extends Component {
   render() {
     return (
+      <ScrollView>
       <View style={styles.container}>
         <Text
           style={{
-            fontSize: 30,
+            fontSize: 28,
             fontWeight: "bold",
-            padding: 30,
+            padding: 10,
             alignItems: "center",
           }}
         >
@@ -40,6 +42,7 @@ export default class UserGuide extends Component {
           5) Surprise!!! Tab the Memories tab and travel down the memory lane
         </Text>
       </View>
+      </ScrollView>
     );
   }
 }

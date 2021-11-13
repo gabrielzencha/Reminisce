@@ -48,13 +48,12 @@ export default function LoginScreen({navigation}) {
       />
 
       <FormInput
+        secureTextEntry={true}
         labelValue={password}
-        multiline={true}
         onChangeText={(userPassword) => setPassword(userPassword)}
         placeholderText="Password"
         iconType="lock"
-        multiline={true}
-        secureTextEntry={true}
+      
       />
 
       <FormButton
@@ -68,13 +67,7 @@ export default function LoginScreen({navigation}) {
 
       
         <View>
-          <SocialButton
-            buttonTitle="Sign In with Facebook"
-            btnType="facebook"
-            color="#4867aa"
-            backgroundColor="#e6eaf4"
-            
-          />
+         
 
           <SocialButton
             buttonTitle="Sign In with Google"
@@ -112,7 +105,6 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
   },
   text: {
-   
     fontSize: 28,
     marginBottom: 10,
     color: '#051d5f',

@@ -1,7 +1,6 @@
 import * as firebase from 'firebase';
-import 'firebase/auth';
-import 'firebase/firestore'
 
+import { getStorage, ref } from "firebase/storage";
 var firebaseConfig = {
     apiKey: "AIzaSyB_Uy-AxO10Kv2kwbUot5KmCNYHGotLIeE",
     authDomain: "reminisce-7b4e3.firebaseapp.com",
@@ -19,7 +18,10 @@ var firebaseConfig = {
     app = firebase.app();
   }
 
+ 
+ 
   const db = app.firestore();
-  const auth = firebase.auth();
+  const auth = app.auth();
+  const storage = app.storage();
 
   export {auth, db};

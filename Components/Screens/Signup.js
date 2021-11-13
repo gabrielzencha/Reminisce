@@ -8,13 +8,14 @@ import {
   ScrollView
   
 } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 import { LogBox } from 'react-native';
 LogBox.ignoreAllLogs();
 import RNRestart from 'react-native-restart';
 import FormInput from '../FormComponents/FormInput'
 import FormButton from '../FormComponents/FormButton';
 import SocialButton from '../FormComponents/SocialButton';
-import { auth } from '../../firebase';
+import { auth,db } from '../../firebase';
 const SignupScreen = ({navigation}) => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
@@ -25,10 +26,14 @@ const SignupScreen = ({navigation}) => {
           var user = result.user;
           user.updateProfile({
             displayName: name,
-            photoURL: imageURL ? imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1024px-User-avatar.svg.png",
+            
 
           }).then(function() {
-            
+            db.collection('userData').doc(auth.currentUser.uid).set({
+              userId: auth.currentUser.uid,
+            }).then(()=>{
+              console.log('user data created')
+            })
           }).catch(function(error) {
             console.log(error)
           })
@@ -42,6 +47,7 @@ const SignupScreen = ({navigation}) => {
   
     return (
       <ScrollView>
+        <StatusBar style= {{color: '#ff5b5b'}}/>
       <View style={styles.container}>
         <Text style={styles.text}>Create an account</Text>
   
@@ -58,7 +64,7 @@ const SignupScreen = ({navigation}) => {
         <FormInput
           labelValue={name}
           onChangeText={(userName) => setName(userName)}
-          placeholderText="Name"
+          placeholderText="Display Name example Sunita"
           multiline={true}
           iconType="user"
           autoCapitalize="none"
@@ -67,7 +73,7 @@ const SignupScreen = ({navigation}) => {
   
         <FormInput
           labelValue={password}
-          multiline={true}
+         
           onChangeText={(userPassword) => setPassword(userPassword)}
           placeholderText="Password"
           iconType="lock"
@@ -123,7 +129,7 @@ const SignupScreen = ({navigation}) => {
     },
     text: {
       
-      fontSize: 28,
+      fontSize: 26,
       marginBottom: 10,
       color: '#051d5f',
     },

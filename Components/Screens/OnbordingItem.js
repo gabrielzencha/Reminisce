@@ -43,6 +43,6 @@ const styles = StyleSheet.create({
         color: '#fff',
         alignSelf: 'stretch',
         textAlign: 'center',
-        paddingHorizontal: 68,
+        paddingHorizontal: 10,
     }
 });
