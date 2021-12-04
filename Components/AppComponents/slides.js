@@ -19,7 +19,7 @@ export default [
     },
     {
         id: '4',
-        description: 'Encourages regular calls between elderly people with shared life experiences',
+        description: 'Encourages regular communication between elderly people with shared life experiences',
         title: 'Digital inclusion',
         image: require('../../assets/images/digital_inclusion.jpg')
     }
