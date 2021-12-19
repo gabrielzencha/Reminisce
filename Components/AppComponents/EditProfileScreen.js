@@ -16,7 +16,7 @@ import {
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 import { auth, db, storage } from "../../firebase";
 import * as firebase from 'firebase'
-export default function EditProfileScreen(navigation) {
+export default function EditProfileScreen(props) {
   const [image, setImage] = useState(null);
   const [uploading, setUploading] = useState(false);
   const [transferred, setTransferred] = useState(0);
@@ -69,18 +69,17 @@ export default function EditProfileScreen(navigation) {
       e2relationship: e2relationship,
       
     });
-  console.log(updates)
+  //console.log(updates)
     db.collection("userData")
       .doc(auth.currentUser.uid)
       .update(updates)
       .then(() => {
         console.log("User Updated!");
         alert(
-          "Profile Updated!",
+          "Profile Updated!"+
           "Your profile has been updated successfully."
-          
         );
-        navigation.navigate('About Me');
+        props.route.params.navigation.navigate('profile');
       })
       .catch(function (error) {
         console.log(error);
@@ -151,7 +150,9 @@ export default function EditProfileScreen(navigation) {
   };
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView 
+    keyboardShouldPersistTaps={'handled'}
+    style={styles.container}>
       <View style={{ margin: 20 }}>
         <View style={{ alignItems: "center" }}>
           <TouchableOpacity onPress={choosePhotoFromLibrary}>

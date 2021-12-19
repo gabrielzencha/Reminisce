@@ -4,8 +4,11 @@ import { GiftedChat, IMessage } from 'react-native-gifted-chat';
 import { auth, db } from '../../firebase';
 
 
+  
+
 export default function MessageScreen()  {
     const [messages, setMessages] = useState([]);
+    
   /*  useEffect(() => {
         setMessages([
           {
@@ -48,9 +51,13 @@ export default function MessageScreen()  {
       }, [])
       return (
         <GiftedChat
+        textProps={{ style: { fontSize: 20 } }}
           messages={messages}
           showAvatarForEveryMessage = {true}
           onSend={messages => onSend(messages)}
+          minComposerHeight={40}
+          minInputToolbarHeight={60}
+  
           user={{
             _id: auth?.currentUser?.email,
             name: auth?.currentUser?.displayName,
@@ -66,4 +73,24 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
 
     },
+    composer:{
+      borderRadius: 25, 
+      borderWidth: 0.5,
+      borderColor: '#dddddd',
+      marginTop: 10,
+      marginBottom: 10,
+      paddingLeft: 10,
+      paddingTop: 5,
+      paddingBottom: 5,
+      paddingRight: 10,
+      fontSize: 16
+    },
+    btnSend: {
+      height: 40,
+      width: 40,
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginRight: 10,
+      borderRadius: 50
+    }
 })

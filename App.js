@@ -225,6 +225,7 @@ const ProfileStackScreen = ({navigation}) => (
       headerTitleStyle: {
         fontWeight: 'bold',
       },
+      
     }}
   > 
   <ProfileStack.Screen
@@ -240,6 +241,20 @@ const ProfileStackScreen = ({navigation}) => (
           onPress={()=> navigation.navigate('EditProfile')}
         />
       ),
+      headerLeft: () =>(
+        <FontAwesome.Button
+          name='sign-out'
+          size={25}
+          backgroundColor="#fff"
+          color= "#000"
+          onPress={()=> {
+             auth
+            .signOut()
+            .then(() => alert("Signed Out Successful"));
+          }}
+        />
+      ),
+    
     }}
   
   />
@@ -253,10 +268,10 @@ options = {{
       size={25}
       backgroundColor="#fff"
       color= "#000"
-      onPress={()=> navigation.navigate('profile')}
+      onPress={()=> navigation.navigate('profile', {navigation})}
     />
   ),
-
+  
 }}
 component={EditProfileScreen}
 

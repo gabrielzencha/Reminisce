@@ -5,7 +5,9 @@ import { ScrollView } from "react-native-gesture-handler";
 export default class UserGuide extends Component {
   render() {
     return (
-      <ScrollView>
+      <ScrollView
+      keyboardShouldPersistTaps={'handled'}
+      >
       <View style={styles.container}>
         <Text
           style={{

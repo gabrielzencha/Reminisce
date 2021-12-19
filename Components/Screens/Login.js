@@ -21,14 +21,16 @@ export default function LoginScreen({navigation}) {
     firebase.auth().signInWithEmailAndPassword(email, password)
         .then((result) => {
             RNRestart.Restart();
-
         })
         .catch((error)=>{
             console.log(error)
         })
   }
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <ScrollView
+    avoidKeyboard={true}
+    keyboardShouldPersistTaps={'handled'}
+    contentContainerStyle={styles.container}>
       <Image
         source={require('../../assets/images/logo.png')}
         style={styles.logo}

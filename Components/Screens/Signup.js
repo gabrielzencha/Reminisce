@@ -19,8 +19,16 @@ import { auth,db } from '../../firebase';
 const SignupScreen = ({navigation}) => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+    function isBlank(str) {
+      return (!str || /^\s*$/.test(str));
+  }
+  function isEmpty(str) {
+    return (!str || str.length === 0 );
+}
     const [name, setName] = useState();  
+    const [isLoading, setIsLoading] = useState(true);
     const onSignUp = () => {
+      if(!(isBlank(name)||isEmpty(name))){
         auth.createUserWithEmailAndPassword(email, password)
         .then((result) => {
           var user = result.user;
@@ -41,12 +49,20 @@ const SignupScreen = ({navigation}) => {
 
         })
         .catch((error)=>{
-            alert(error);
+            
         })
     }
+    else {
+      alert("Please enter name")
+      console.log("no name")
+    }
+      }
+        
   
     return (
-      <ScrollView>
+      <ScrollView
+      keyboardShouldPersistTaps={'handled'}
+      >
         <StatusBar style= {{color: '#ff5b5b'}}/>
       <View style={styles.container}>
         <Text style={styles.text}>Create an account</Text>
@@ -122,7 +138,7 @@ const SignupScreen = ({navigation}) => {
   const styles = StyleSheet.create({
     container: {
       backgroundColor: '#f9fafd',
-      flex: 1,
+      flex : 1,
       justifyContent: 'center',
       alignItems: 'center',
       padding: 20,

@@ -65,7 +65,9 @@ const [e2email, setE2email] = useState();
 const [e2phone, setE2phone] = useState(); 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView >
+      <ScrollView 
+      keyboardShouldPersistTaps={'handled'}
+      >
       <View style={styles.userInfoSection}>
         <View style={{ flexDirection: "row", marginTop: 15 }}>
           <Avatar.Image
@@ -139,6 +141,12 @@ const [e2phone, setE2phone] = useState();
             </Text>
             <Text style={{ color: "#000", marginLeft: 3, marginBottom: 10, fontSize: 17}}>
             {e1phone ? e1phone : "Phone not set"}
+        </Text>
+        <Text style={{ color: "#000", fontSize: 17, marginLeft: 3, marginBottom: 10, fontWeight: 'bold'}}>
+            First Emergency Contact Email
+            </Text>
+            <Text style={{ color: "#000", marginLeft: 3, marginBottom: 10, fontSize: 17}}>
+            {e1email ? e1email : "Emergency contact 1 email not set"}
         </Text>
         <Text style={{ color: "#000", fontSize: 17, marginLeft: 3, marginBottom: 10, fontWeight: 'bold'}}>
             First Emergency Contact Relationship
