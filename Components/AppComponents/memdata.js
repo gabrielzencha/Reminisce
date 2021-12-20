@@ -25,7 +25,7 @@ export default [
     },
     {
         id: '5',
-        questions: 'What is the Christmas decoration on the tree called?\nWhat other decorations did you put on Christmas trees?\n',
+        questions: 'What are the Christmas decorations on the tree called?\nWhat other decorations did you put on Christmas trees?\n',
         title:'Christmas tree',
         image: require('../../assets/images/memories/christmas_tree.jpg')
     },
@@ -92,7 +92,7 @@ export default [
     {
         id: '17',
         questions: 'What recipes did you make?\nHow different is cooking and eating when compared to the past?\n',
-        title:'Phoenix Metro cooker',
+        title:'Gas cooker',
         image: require('../../assets/images/memories/phoenix_metro_cooker.jpg')
     },
     {
@@ -127,7 +127,7 @@ export default [
     },
     {
         id: '23',
-        questions: 'Do you think the way to a man\'s heart is through his belly?\nWhat other cookbooks did you use?\n',
+        questions: 'Do you think the way to a man\'s heart is through his belly?\nWhat cookbooks did you use?\n',
         title:'The way to a man\'s heart cookbook',
         image: require('../../assets/images/memories/the_way_cook_book.jpg')
     },
