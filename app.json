@@ -34,7 +34,7 @@
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ff5b5b"
       },
-      "package": "com.reminisce"
+      "package": "com.reminiscence"
     },
     "web": {
       "favicon": "./assets/icon.png"

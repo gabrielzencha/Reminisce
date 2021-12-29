@@ -13,13 +13,8 @@ export default [
     },
     {
         id: '3',
-<<<<<<< HEAD
-        description: 'Face to face chats and reminiscing. Generates positive feelings from sharing past experiences and improves mental health',
-        title: 'Frequent calls ',
-=======
         description: 'Generates positive feelings from sharing past experiences and improves mental health',
         title: 'Frequent calls, face to face chats and reminiscing.',
->>>>>>> refs/remotes/origin/master
         image: require('../../assets/images/face_to_face.jpg')
     },
     {
