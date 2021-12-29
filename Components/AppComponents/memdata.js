@@ -9,7 +9,7 @@ export default [
         id: '2',
         questions: 'What sort of programmes were on the radio?\nWhy did you like your favourite programme?\n',
         title: 'Bush radio',
-        image: require('../../assets/images/memories/tv.jpg')
+        image: require('../../assets/images/memories/bush_radio.jpg')
     },
     {
         id: '3',
@@ -45,7 +45,7 @@ export default [
         id: '9',
         questions: 'How did you shop for corsets?\nHow often did you wear corsets?\n',
         title:'Corset',
-        image: require('../../assets/images/memories/corset.png')
+        image: require('../../assets/images/memories/corset.jpg')
     },
     {
         id: '10',
@@ -93,7 +93,7 @@ export default [
         id: '17',
         questions: 'What recipes did you make?\nHow different is cooking and eating when compared to the past?\n',
         title:'Gas cooker',
-        image: require('../../assets/images/memories/phoenix_metro_cooker.jpg')
+        image: require('../../assets/images/memories/gas_cooker.jpg')
     },
     {
         id: '18',
@@ -137,16 +137,16 @@ export default [
         title:'Wedding day',
         image: require('../../assets/images/memories/wedding_attire.jpg')
     },
-    {
+  /*  {
         id: '25',
         questions: 'What sort of show was What\'s My Line?\nWhich celebrity panelist do you remember attending the show?\n',
         title:'What\'s My Line?',
         image: require('../../assets/images/memories/what_my_line_tv_show.jpg')
-    },
-    {
+    },*/
+    /*{
         id: '26',
         questions: 'What was The Blue Lamp about?\nWho were the actors and actresses?\n',
         title:'The Blue Lamp',
         image: require('../../assets/images/memories/the_blue_lampmovie.jpg')
-    },
+    },*/
 ]
