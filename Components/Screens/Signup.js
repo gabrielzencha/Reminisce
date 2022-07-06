@@ -43,7 +43,7 @@ const SignupScreen = ({navigation}) => {
               console.log('user data created')
             })
           }).catch(function(error) {
-            console.log(error)
+            //console.log(error)
           })
             RNRestart.Restart();
 
@@ -54,7 +54,7 @@ const SignupScreen = ({navigation}) => {
     }
     else {
       alert("Please enter name")
-      console.log("no name")
+      //console.log("no name")
     }
       }
         
